@@ -3,6 +3,7 @@ import { BlockNoteView } from "@blocknote/mantine";
 import "@blocknote/mantine/style.css";
 import { useCreateBlockNote } from "@blocknote/react";
 import styled from "@emotion/styled";
+import { transformBlockNoteToMyWidgets } from "./utils/convertToWidgets.utils";
 
 const ButtonStyled = styled.button`
   background-color: #0070f3;
@@ -25,11 +26,13 @@ export default function App() {
   const handleSave = async () => {
     if (!editor) return;
     const contentJSON = editor.document;
+    const widgets = transformBlockNoteToMyWidgets(contentJSON);
+
     try {
       const response = await fetch(`${API_BASE_URL}/save-content`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(contentJSON),
+        body: JSON.stringify(widgets),
       });
       const result = await response.json();
       if (!response.ok) throw new Error(result.message || 'Failed to save');
