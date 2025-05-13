@@ -15,4 +15,13 @@ export interface ListWidget {
   items: TextParagraphWidget[];
 }
 
-export type AnyWidget = TextTitleWidget | TextParagraphWidget | ListWidget
+export interface ResourceReferenceWidget {
+  widget_type: "RESOURCE_REFERENCE";
+  resource_id: string;
+  show_author: boolean;
+  show_description: boolean;
+  rich_widget_type: string;
+  resource_subtype: string;
+}
+
+export type AnyWidget = TextTitleWidget | TextParagraphWidget | ListWidget | ResourceReferenceWidget;

@@ -1,9 +1,9 @@
-import type { Block } from "@blocknote/core";
 import { processInlineContent } from "./processInline.utils";
 import type { AnyWidget, TextParagraphWidget, TextTitleWidget } from "../types/widget.types";
+import type { CustomBlock } from "../App";
 
 export function transformBlockNoteToMyWidgets(
-  bnDocument: Block[]
+  bnDocument: CustomBlock[]
 ): AnyWidget[] {
   const myWidgets: AnyWidget[] = [];
   let currentListItems: TextParagraphWidget[] = [];
@@ -64,6 +64,17 @@ export function transformBlockNoteToMyWidgets(
         currentListItems.push({
           widget_type: "TEXT_PARAGRAPH",
           text: processInlineContent(block.content || []),
+        });
+        break;
+      
+      case "resourceReference":
+        myWidgets.push({
+          widget_type: "RESOURCE_REFERENCE",
+          resource_id: block.props.resource_id,
+          rich_widget_type: block.props.rich_widget_type,
+          resource_subtype: block.props.resource_subtype,
+          show_author: block.props.show_author,
+          show_description: block.props.show_description,
         });
         break;
 
