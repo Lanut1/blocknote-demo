@@ -10,3 +10,10 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+.block {
+  border: 2px solid lightgray;
+  border-radius: 4px;
+  padding: 2px;
+  margin: 2px;
+}

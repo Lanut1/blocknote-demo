@@ -40,7 +40,12 @@ const LabelStyled = styled.label`
 
 export default function App() {
   const editor = useCreateBlockNote({
-    schema
+    schema,
+    domAttributes: {
+      block: {
+        class: "block",
+      },
+    },
   });
 
   const handleDownload = () => {
