@@ -35,6 +35,14 @@ export function transformBlockNoteToMyWidgets(
           title: processInlineContent(block.content || []),
         });
         break;
+      
+      case "customHeading":
+        myWidgets.push({
+          widget_type: "TEXT_TITLE",
+          title_level: `H${block.props.level || 4}` as TextTitleWidget["title_level"],
+          title: processInlineContent(block.content || []),
+        });
+        break;
 
       case "paragraph":
         myWidgets.push({

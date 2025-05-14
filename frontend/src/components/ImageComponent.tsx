@@ -34,7 +34,7 @@ const Link = styled.a`
   text-decoration: underline;
 `;
 
-export const imageWidget = createReactBlockSpec(
+export const ImageWidget = createReactBlockSpec(
   {
     type: "imageWidget",
     propSchema: {
