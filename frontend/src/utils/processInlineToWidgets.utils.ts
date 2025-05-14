@@ -1,6 +1,5 @@
 import type { BlockNoteInlineContent } from "../types/blocknote.types";
 
-
 export function processInlineContent(bnInlineContent: BlockNoteInlineContent[]): string {
   let resultText = "";
 

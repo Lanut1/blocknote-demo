@@ -1,5 +1,5 @@
 import { insertOrUpdateBlock } from "@blocknote/core";
-import { MdWidgets } from "react-icons/md";
+import { MdBookmark, MdFormatSize, MdImage, MdViewColumn, MdWidgets } from "react-icons/md";
 import { type CustomSchema } from "./editorSchema";
 
 export const createSlashMenuItems = (editor: CustomSchema["BlockNoteEditor"]) => [
@@ -15,7 +15,7 @@ export const createSlashMenuItems = (editor: CustomSchema["BlockNoteEditor"]) =>
       }),
     aliases: ["h4", "heading4"],
     group: "Custom Headings",
-    icon: <MdWidgets size={18} />,
+    icon: <MdFormatSize size={18} />,
   },
   {
     title: "Heading 5",
@@ -29,7 +29,7 @@ export const createSlashMenuItems = (editor: CustomSchema["BlockNoteEditor"]) =>
       }),
     aliases: ["h5", "heading5"],
     group: "Custom Headings",
-    icon: <MdWidgets size={18} />,
+    icon: <MdFormatSize size={18} />,
   },
   {
     title: "Heading 6",
@@ -44,7 +44,7 @@ export const createSlashMenuItems = (editor: CustomSchema["BlockNoteEditor"]) =>
       }),
     aliases: ["h6", "heading6"],
     group: "Custom Headings",
-    icon: <MdWidgets size={18} />,
+    icon: <MdFormatSize size={18} />,
   },
   {
     title: "Two Column Layout",
@@ -87,7 +87,7 @@ export const createSlashMenuItems = (editor: CustomSchema["BlockNoteEditor"]) =>
     },
     aliases: ["columns", "layout"],
     group: "Custom Blocks",
-    icon: <MdWidgets size={18} />,
+    icon: <MdViewColumn size={18} />,
   },
   {
     title: "Resource Reference",
@@ -106,7 +106,7 @@ export const createSlashMenuItems = (editor: CustomSchema["BlockNoteEditor"]) =>
       }),
     aliases: ["resource", "widget"],
     group: "Custom Blocks",
-    icon: <MdWidgets size={18} />,
+    icon: <MdBookmark size={18} />,
   },
   {
     title: "Topic Reference",
@@ -138,6 +138,6 @@ export const createSlashMenuItems = (editor: CustomSchema["BlockNoteEditor"]) =>
       }),
     aliases: ["image", "widget"],
     group: "Custom Blocks",
-    icon: <MdWidgets size={18} />,
+    icon: <MdImage size={18} />,
   },
 ];

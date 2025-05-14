@@ -1,4 +1,4 @@
-import { processInlineContent } from "./processInline.utils";
+import { processInlineContent } from "./processInlineToWidgets.utils";
 import type { AnyWidget, TextParagraphWidget, TextTitleWidget } from "../types/widget.types";
 import type { CustomBlock } from "../editor/editorSchema";
 
