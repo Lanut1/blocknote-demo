@@ -1,6 +1,6 @@
 import { processInlineContent } from "./processInline.utils";
 import type { AnyWidget, TextParagraphWidget, TextTitleWidget } from "../types/widget.types";
-import type { CustomBlock } from "../App";
+import type { CustomBlock } from "../editor/editorSchema";
 
 export function transformBlockNoteToMyWidgets(
   bnDocument: CustomBlock[]
@@ -21,7 +21,7 @@ export function transformBlockNoteToMyWidgets(
       currentListType = null;
     }
   }
-
+  
   for (const block of bnDocument) {
     if (block.type !== "bulletListItem" && block.type !== "numberedListItem" && currentListType) {
       flushList();
@@ -78,8 +78,36 @@ export function transformBlockNoteToMyWidgets(
         });
         break;
 
+      case "topicReference":
+        myWidgets.push({
+          widget_type: "TOPIC_REFERENCE",
+          ref_topic_id: block.props.ref_topic_id,
+        });
+        break;
+
+      case "imageWidget":
+        myWidgets.push({
+          widget_type: "IMAGE",
+          image_url: block.props.image_url,
+          description: block.props.description,
+          url: block.props.url,
+        });
+        break;
+      
+      case "columnList":
+        const columns = block.children || [];
+        const leftColumn = columns[0]?.children || [];
+        const rightColumn = columns[1]?.children || [];
+
+        myWidgets.push({
+          widget_type: "STRUCT_COLUMNS",
+          left_column: transformBlockNoteToMyWidgets(leftColumn),
+          right_column: transformBlockNoteToMyWidgets(rightColumn),
+        });
+        break;
+
       default:
-        console.warn(`Unhandled BlockNote block type: ${block.type}`);
+        console.warn('Unhandled BlockNote block type');
         break;
     }
   }

@@ -24,4 +24,30 @@ export interface ResourceReferenceWidget {
   resource_subtype: string;
 }
 
-export type AnyWidget = TextTitleWidget | TextParagraphWidget | ListWidget | ResourceReferenceWidget;
+export interface TopicReferenceWidget {
+  widget_type: "TOPIC_REFERENCE";
+  ref_topic_id: string;
+}
+
+export interface ImageWidget {
+  widget_type: "IMAGE";
+  image_url: string;
+  description: string;
+  url: string;
+}
+
+export interface TwoColumnWidget {
+  widget_type: "STRUCT_COLUMNS",
+  left_column: AnyWidget[],
+  right_column: AnyWidget[]
+}
+
+export type AnyWidget =
+  TextTitleWidget |
+  TextParagraphWidget | 
+  ListWidget | 
+  ResourceReferenceWidget | 
+  TopicReferenceWidget | 
+  ImageWidget |
+  TwoColumnWidget
+  ;

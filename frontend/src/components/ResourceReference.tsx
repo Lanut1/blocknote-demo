@@ -3,7 +3,7 @@ import styled from "@emotion/styled";
 import { createReactBlockSpec } from "@blocknote/react";
 
 export const widgetTypes = ["RESOURCE_SIDE", "RESOURCE_INLINE"] as const;
-export const subtypes = ["SMALL", "SHORT", "HERO"] as const;
+export const subtypes = ["SMALL", "SHORT", "LARGE", "HERO"] as const;
 
 const WidgetContainer = styled.div`
   padding: 12px;
@@ -25,6 +25,11 @@ const WidgetInfo = styled.div`
   margin-bottom: 8px;
   color: #555;
 `;
+
+const subtypeOptions: Record<typeof widgetTypes[number], typeof subtypes[number][]> = {
+  RESOURCE_SIDE: ["SHORT", "SMALL"],
+  RESOURCE_INLINE: ["HERO", "LARGE", "SMALL", "SHORT"],
+};
 
 export const ResourceReference = createReactBlockSpec(
   {
@@ -83,7 +88,7 @@ export const ResourceReference = createReactBlockSpec(
               ))}
 
               <Menu.Label>Subtype</Menu.Label>
-              {subtypes.map((subtype) => (
+              {(subtypeOptions[rich_widget_type] || []).map((subtype) => (
                 <Menu.Item
                   key={subtype}
                   onClick={() => updateProp("resource_subtype", subtype)}
