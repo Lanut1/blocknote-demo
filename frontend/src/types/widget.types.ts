@@ -1,6 +1,6 @@
 export interface TextTitleWidget {
   widget_type: "TEXT_TITLE";
-  title_level: "H1" | "H2" | "H3" | "H4" | "H5" | "H6";
+  title_level: "H1" | "H2" | "H3" | "H4";
   title: string;
 }
 

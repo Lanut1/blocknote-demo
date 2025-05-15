@@ -9,40 +9,9 @@ export const createSlashMenuItems = (editor: CustomSchema["BlockNoteEditor"]) =>
     onItemClick: () =>
       insertOrUpdateBlock(editor, {
         type: "customHeading",
-        props: {
-          level: 4,
-        },
+        props: {},
       }),
     aliases: ["h4", "heading4"],
-    group: "Custom Headings",
-    icon: <MdFormatSize size={18} />,
-  },
-  {
-    title: "Heading 5",
-    subtext: "Insert heading level 5",
-    onItemClick: () =>
-      insertOrUpdateBlock(editor, {
-        type: "customHeading",
-        props: {
-          level: 5,
-        },
-      }),
-    aliases: ["h5", "heading5"],
-    group: "Custom Headings",
-    icon: <MdFormatSize size={18} />,
-  },
-  {
-    title: "Heading 6",
-    subtext: "Insert heading level 6",
-    onItemClick: () =>
-      insertOrUpdateBlock(editor, {
-        type: "customHeading",
-        props: {
-          level: 6,
-          
-        },
-      }),
-    aliases: ["h6", "heading6"],
     group: "Custom Headings",
     icon: <MdFormatSize size={18} />,
   },

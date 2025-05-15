@@ -54,7 +54,7 @@ export default function App() {
 
     const widgets = transformBlockNoteToMyWidgets(contentJSON);
     
-    const jsonContent = JSON.stringify(widgets, null, 2);
+    const jsonContent = JSON.stringify({ widgets }, null, 2);
     
     const blob = new Blob([jsonContent], { type: 'application/json' });
  
@@ -110,7 +110,7 @@ export default function App() {
       <LabelStyled htmlFor="file-upload">
           Upload JSON
       </LabelStyled>
-      <BlockNoteView editor={editor} slashMenu={false} emojiPicker={false}>
+      <BlockNoteView editor={editor} slashMenu={false} emojiPicker={false} theme={"light"}>
         <SuggestionMenuController
           triggerCharacter="/"
           getItems={async (query) => {

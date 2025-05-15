@@ -25,7 +25,7 @@ export function transformMyWidgetsToBlockNote(
   for (const widget of widgets) {
     switch (widget.widget_type) {
       case 'TEXT_TITLE':
-        const level = parseInt(widget.title_level.substring(1)) as 1 | 2 | 3 | 4 | 5 | 6;
+        const level = parseInt(widget.title_level.substring(1)) as 1 | 2 | 3 | 4;
 
         if (level < 4) {
           blocks.push({
@@ -38,9 +38,7 @@ export function transformMyWidgetsToBlockNote(
         } else {
           blocks.push({
             type: 'customHeading',
-            props: {
-              level: level
-            },
+            props: {},
             content: parseInlineContent(widget.title),
           });
         }

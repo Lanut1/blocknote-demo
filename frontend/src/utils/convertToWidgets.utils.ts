@@ -29,25 +29,34 @@ export function transformBlockNoteToMyWidgets(
 
     switch (block.type) {
       case "heading":
+        const title = processInlineContent(block.content || []);
+        if (!title) break;
+
         myWidgets.push({
           widget_type: "TEXT_TITLE",
           title_level: `H${block.props.level || 1}` as TextTitleWidget["title_level"],
-          title: processInlineContent(block.content || []),
+          title
         });
         break;
       
       case "customHeading":
+        const customTitle = processInlineContent(block.content || []);
+        if (!customTitle) break;
+
         myWidgets.push({
           widget_type: "TEXT_TITLE",
-          title_level: `H${block.props.level || 4}` as TextTitleWidget["title_level"],
-          title: processInlineContent(block.content || []),
+          title_level: "H4" as TextTitleWidget["title_level"],
+          title: customTitle,
         });
         break;
 
       case "paragraph":
+        const text = processInlineContent(block.content || []);
+        if (!text) break;
+
         myWidgets.push({
           widget_type: "TEXT_PARAGRAPH",
-          text: processInlineContent(block.content || []),
+          text,
         });
         break;
 
@@ -57,9 +66,12 @@ export function transformBlockNoteToMyWidgets(
         }
 
         currentListType = "UNORDERED";
+        const bulletList = processInlineContent(block.content || []);
+        if (!bulletList) break;
+
         currentListItems.push({
           widget_type: "TEXT_PARAGRAPH",
-          text: processInlineContent(block.content || []),
+          text: bulletList,
         });
         break;
 
@@ -69,9 +81,12 @@ export function transformBlockNoteToMyWidgets(
         }
 
         currentListType = "ORDERED";
+        const numberedList = processInlineContent(block.content || []);
+        if (!numberedList) break;
+
         currentListItems.push({
           widget_type: "TEXT_PARAGRAPH",
-          text: processInlineContent(block.content || []),
+          text: numberedList,
         });
         break;
       
