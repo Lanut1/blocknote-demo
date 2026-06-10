@@ -1,4 +1,4 @@
-# User Research — Overview
+# User Research 	6 Overview
 
 ## Scope
 What PM work this topic covers.
@@ -11,7 +11,10 @@ What PM work this topic covers.
 Relevant skills from the 15-skill map in `08_frameworks/task-framework.md`.
 
 ## AI Tools
-Top 3–5 relevant tools from `07_tools/`.
+Top 35 relevant tools from `07_tools/`.
+
+## Notes
+- Access to synced files from linked GitHub repositories can facilitate user research by providing project data or files relevant to understanding users and solution gaps.
 
 ## Links
 - Related framework: `../../08_frameworks/<framework>.md`
