@@ -12,11 +12,9 @@ Items currently in progress or committed to the current sprint.
 
 | ID | Item | Type | Priority | Status | Assignee | Sprint | Notes |
 |----|------|------|----------|--------|----------|--------|-------|
-| [#] | [Fill in: work item title] | [Feature / Bug / Chore / Research] | [High / Med / Low] | [In Progress / Ready / Blocked] | [Name] | [Sprint #] | [Context or dependency] |
+| [#] | [Fill in: work item title] | [Feature / Bug / Chore / Research] | High | [In Progress / Ready / Blocked] | [Name] | [Sprint #] | [Context or dependency] |
 | [#] | [Fill in] | | | | | | |
 | [#] | [Fill in] | | | | | | |
-
----
 
 ## Backlog (Prioritised, Not Yet Scheduled)
 
@@ -24,13 +22,11 @@ Items groomed and ready for an upcoming sprint.
 
 | ID | Item | Type | Priority | Size | Theme | Notes |
 |----|------|------|----------|------|-------|-------|
-| [#] | [Fill in: work item title] | [Feature / Bug / Chore / Research] | [High / Med / Low] | [S / M / L / XL] | [Strategic theme] | [Context or open questions] |
+| [#] | [Fill in: work item title] | [Feature / Bug / Chore / Research] | High | [S / M / L / XL] | [Strategic theme] | [Context or open questions] |
 | [#] | [Fill in] | | | | | |
 | [#] | [Fill in] | | | | | |
 | [#] | [Fill in] | | | | | |
 | [#] | [Fill in] | | | | | |
-
----
 
 ## Backlog Grooming Notes
 
