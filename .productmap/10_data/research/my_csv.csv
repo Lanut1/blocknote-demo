@@ -1,0 +1,11 @@
+ id,title,priority,status,owner,estimate,notes
+1,User login with email,High,In progress,anna,3,Blocked on auth service
+2,Password reset flow,High,Backlog,anna,2,
+3,SSO integration,Medium,Backlog,dmitry,8,"Okta first, Google later"
+4,Two-factor authentication,Medium,Backlog,dmitry,5,
+5,Session timeout handling,Low,Done,anna,1,Shipped in 24.07
+6,Audit log for admin actions,Medium,In review,sergei,5,"Needs retention policy, see ADR-004"
+7,Bulk user import,Low,Backlog,sergei,8,CSV upload
+8,Role-based permissions,High,In progress,anna,13,Depends on #6
+9,Email notification preferences,Low,Backlog,dmitry,3,
+10,Account deletion,Medium,Backlog,anna,5,"GDPR requirement, hard deadline Q4"
